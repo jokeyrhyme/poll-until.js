@@ -21,7 +21,7 @@
       callback();
     } else {
       setTimeout(function () {
-        waitFor(condition, interval, callback);
+        pollUntil(condition, interval, callback);
       }, interval || 197);
     }
   };
