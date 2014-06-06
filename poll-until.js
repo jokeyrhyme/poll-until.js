@@ -17,12 +17,17 @@
    * @param {Function} callback a function to invoke when the condition returns `true`
    */
   return function pollUntil(condition, interval, callback) {
+    var timeout;
     if (condition && condition()) {
+      timeout = null;
       callback();
     } else {
-      return setTimeout(function () {
+      timeout =  setTimeout(function () {
         pollUntil(condition, interval, callback);
       }, interval || 197);
     }
+    return function stop() {
+      clearTimeout(timeout);
+    };
   };
 }));
