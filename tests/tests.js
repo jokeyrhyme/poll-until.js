@@ -49,5 +49,26 @@
       }, 1500);
     });
 
+    test('returned stop() can be used to terminate early', function (done) {
+      var stop, checkCount, callbackCalled;
+      checkCount = 0;
+      callbackCalled = false;
+      stop = pollUntil(function () {
+        checkCount += 1;
+        return false;
+      }, 197, function () {
+        callbackCalled = true;
+        assert(false, 'callback should not be called!');
+      });
+
+      stop();
+
+      setTimeout(function () {
+        assert.equal(checkCount, 1, 'condition only checked once');
+        assert.isFalse(callbackCalled);
+        done();
+      }, 1500);
+    });
+
   });
 }(this));
