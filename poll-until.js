@@ -20,7 +20,7 @@
     if (condition && condition()) {
       callback();
     } else {
-      setTimeout(function () {
+      return setTimeout(function () {
         pollUntil(condition, interval, callback);
       }, interval || 197);
     }
