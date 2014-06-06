@@ -1,6 +1,6 @@
 {
   "name": "poll-until",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "last resort in lieu of events or promises",
   "main": "poll-until.js",
   "scripts": {
