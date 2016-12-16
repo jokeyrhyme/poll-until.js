@@ -1,5 +1,11 @@
 # poll-until.js
 
+
+## ABANDONED
+
+Use [p-wait-for](https://github.com/sindresorhus/p-wait-for) instead
+
+
 ## What?
 
 A last resort in lieu of Events or Promises.
@@ -50,4 +56,3 @@ npm install poll-until --save
 var pollUntil = require('poll-until');
 pollUntil(/* ... */);
 ```
-
